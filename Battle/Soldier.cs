@@ -8,11 +8,24 @@ namespace Battle
         {
             ValidateNameisNotBlank(name);
             Name = name;
+            Weapon = new BareFist();
+        }
+
+
+        public Soldier(string name, BaseWeapon weapon)
+        {
+            ValidateNameisNotBlank(name);
+            Name = name;
+            Weapon = weapon;
         }
 
         public Soldier Fight(Soldier enemy)
         {
-            return this;
+            if (Weapon.Damage >= enemy.Weapon.Damage)
+            {
+                return this;
+            }
+            return enemy;
 
         }
 
@@ -28,5 +41,7 @@ namespace Battle
         private bool IsBlank(string name) => string.IsNullOrEmpty(name?.Trim());
         
         public string Name { get; }
+
+        public BaseWeapon Weapon { get; set; }
     }
 }
