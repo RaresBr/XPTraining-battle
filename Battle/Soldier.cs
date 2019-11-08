@@ -9,7 +9,7 @@ namespace Battle
             ValidateNameisNotBlank(name);
             Name = name;
         }
-        x
+        
         private void ValidateNameisNotBlank(string name)
         {
             if (IsBlank(name))
