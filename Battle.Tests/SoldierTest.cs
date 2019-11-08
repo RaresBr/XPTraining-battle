@@ -25,5 +25,16 @@ namespace Battle.Tests
              
             act.Should().Throw<ArgumentException>();
         }
+
+        [Fact]
+        public void Fight_GivenTwoSoldier_WhenFighting_WinningSoldierMustBeReturned()
+        {
+            var attacker = new Soldier("S1");
+            var defender = new Soldier("S2");
+
+            var result = attacker.Fight(defender);
+
+            result.Should().Be(attacker);
+        }
     }
 }

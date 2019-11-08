@@ -9,6 +9,13 @@ namespace Battle
             ValidateNameisNotBlank(name);
             Name = name;
         }
+
+        public Soldier Fight(Soldier enemy)
+        {
+            return this;
+
+        }
+
         
         private void ValidateNameisNotBlank(string name)
         {
