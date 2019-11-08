@@ -4,6 +4,8 @@ namespace Battle
 {
     public class Soldier
     {
+        public int soldierId;
+
         public Soldier(string name)
         {
             ValidateNameisNotBlank(name);
